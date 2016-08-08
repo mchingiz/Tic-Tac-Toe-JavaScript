@@ -1,0 +1,44 @@
+.row {
+  margin-bottom: 20px; }
+  .row h1 {
+    font-size: 60px;
+    text-align: center; }
+
+.container-fluid .col-md-2 .btn {
+  padding: 10px 20px;
+  background-color: gray;
+  color: white;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  left: 10px; }
+  .container-fluid .col-md-2 .btn:hover {
+    background-color: darkgray; }
+.container-fluid .col-md-2 .resultLog p {
+  font-size: 30px;
+  font-weight: bold; }
+.container-fluid .col-md-8 .main {
+  background-color: lightgray;
+  box-sizing: content-box;
+  border: 1px solid 	#aaaaaa;
+  font-family: Sans-serif;
+  font-weight: 100;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto; }
+  .container-fluid .col-md-8 .main .cell {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid 	#aaaaaa;
+    float: left; }
+    .container-fluid .col-md-8 .main .cell p {
+      font-size: 125px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #4a4848; }
+
+/*# sourceMappingURL=style.css.map */
