@@ -68,152 +68,19 @@
 	var arr=new Array(3);
 		for(i=0;i<3;i++){
 			arr[i]=new Array(3);}
-		
+	
+	//To make sure every cell has different value
 	var arr=[["e","r","t"],["y","u","q"],["e","n","t"]];
 		
 	var gameOver=false;
-		
+	
 	var checkTie=0;
 	
 	var row;var col;
 		
 	newGame();
-		/*
-		$("#c1").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[0][0]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[0][0]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-	
-		$("#c2").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[0][1]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[0][1]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c3").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[0][2]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[0][2]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c4").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[1][0]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[1][0]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c5").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[1][1]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[1][1]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c6").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[1][2]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[1][2]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c7").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[2][0]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[2][0]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c8").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[2][1]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[2][1]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		
-		$("#c9").on('click',function(){
-			if(gameOver==false && $(this).is(':empty')){
-				if(count%2==0){
-					$(this).html("<p>x</p>");
-					arr[2][2]="x";
-				}else{
-					$(this).html("<p>o</p>");
-					arr[2][2]="o";
-				}
-				count++;
-				checkTie++;
-				check();
-			}
-		})
-		*/
+
+//CELLS
 		
 		$("#c1").on('click',function(){
 			if(gameOver==false && $(this).is(':empty')){
@@ -268,7 +135,9 @@
 				cell(2,2,"#c9");
 			}
 		})
-		
+
+// 'CELL' function for operations of cells
+
 		function cell(row,col,divId){
 			if(count%2==0){
 				$(divId).html("<p>x</p>");
@@ -281,8 +150,12 @@
 			checkTie++;
 			check();
 		}
+
+//Checking if the game is over
 		
 		function check(){
+			
+			//Checking rows
 			for(i=0;i<3;i++){
 				var j=0;
 				if(arr[i][j]==arr[i][j+1] && arr[i][j+1]==arr[i][j+2]){
@@ -290,6 +163,8 @@
 					gameOver=true;
 				}
 			}
+			
+			//Checking columns
 			for(j=0;j<3;j++){
 				var i=0;
 				if(arr[i][j]==arr[i+1][j] && arr[i+1][j]==arr[i+2][j]){
@@ -297,6 +172,8 @@
 					gameOver=true;
 				}
 			}
+			
+			//Checking diagonals
 			if(arr[0][0]==arr[1][1] && arr[1][1]==arr[2][2]){
 					$(".resultLog").html("<p>"+arr[1][1]+" is the winner!</p>");
 					gameOver=true;
@@ -305,17 +182,13 @@
 					gameOver=true;
 			}
 			
+			//Checking if the game is tie
 			if(checkTie==9){
 				$(".resultLog").html("<p>TIE!</p>");
 			}
 			
 			
 		}
-		
-		
-		$("button").on("click",function(){
-			newGame();
-		})
 		
 		function newGame(){
 			$(".cell").empty();
@@ -326,7 +199,9 @@
 			$(".resultLog").empty();
 		}
 		
-		
+		$("button").on("click",function(){
+			newGame();
+		})
 		
 	})
 </script>
