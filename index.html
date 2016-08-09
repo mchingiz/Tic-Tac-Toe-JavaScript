@@ -74,9 +74,11 @@
 	var gameOver=false;
 		
 	var checkTie=0;
+	
+	var row;var col;
 		
 	newGame();
-		
+		/*
 		$("#c1").on('click',function(){
 			if(gameOver==false && $(this).is(':empty')){
 				if(count%2==0){
@@ -91,7 +93,7 @@
 				check();
 			}
 		})
-		
+	
 		$("#c2").on('click',function(){
 			if(gameOver==false && $(this).is(':empty')){
 				if(count%2==0){
@@ -211,6 +213,74 @@
 				check();
 			}
 		})
+		*/
+		
+		$("#c1").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(0,0,"#c1");
+			}
+		})
+		
+		$("#c2").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(0,1,"#c2");
+			}
+		})
+		
+		$("#c3").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(0,2,"#c3");
+			}
+		})
+		
+		$("#c4").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(1,0,"#c4");
+			}
+		})
+		
+		$("#c5").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(1,1,"#c5");
+			}
+		})
+		
+		$("#c6").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(1,2,"#c6");
+			}
+		})
+		
+		$("#c7").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(2,0,"#c7");
+			}
+		})
+		
+		$("#c8").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(2,1,"#c8");
+			}
+		})
+		
+		$("#c9").on('click',function(){
+			if(gameOver==false && $(this).is(':empty')){
+				cell(2,2,"#c9");
+			}
+		})
+		
+		function cell(row,col,divId){
+			if(count%2==0){
+				$(divId).html("<p>x</p>");
+				arr[row][col]="x";
+			}else{
+				$(divId).html("<p>o</p>");
+				arr[row][col]="o";
+			}
+			count++;
+			checkTie++;
+			check();
+		}
 		
 		function check(){
 			for(i=0;i<3;i++){
@@ -255,6 +325,8 @@
 			checkTie=0;
 			$(".resultLog").empty();
 		}
+		
+		
 		
 	})
 </script>
