@@ -16,8 +16,12 @@
   left: 10px; }
   .container-fluid .col-md-2 .btn:hover {
     background-color: darkgray; }
+.container-fluid .col-md-2 .resultLog h1 {
+  border-bottom: 1px solid gray; }
 .container-fluid .col-md-2 .resultLog p {
-  font-size: 30px;
+  font-size: 30px; }
+.container-fluid .col-md-2 .lastWinner p {
+  font-size: 20px;
   font-weight: bold; }
 .container-fluid .col-md-8 .main {
   background-color: lightgray;
